@@ -4,6 +4,7 @@ buildscript {
     ext.ztExecVersion = '1.10'
     ext.easymockVersion = '3.5'
     ext.jacksonVersion = '2.9.2'
+    ext.assertjVersion = '3.8.0'
 
     repositories {
         mavenCentral()
@@ -47,6 +48,7 @@ dependencies {
     testCompile "io.projectreactor:reactor-test"
     testCompile "junit:junit:$junitVersion"
     testCompile "org.easymock:easymock:$easymockVersion"
+    testCompile "org.assertj:assertj-core:$assertjVersion"
 }
 
 compileKotlin {

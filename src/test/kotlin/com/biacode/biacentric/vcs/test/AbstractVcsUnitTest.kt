@@ -11,7 +11,7 @@ import org.junit.runner.RunWith
  * Time: 7:00 PM
  */
 @RunWith(EasyMockRunner::class)
-open class AbstractVcsUnitTest : EasyMockSupport() {
+abstract class AbstractVcsUnitTest : EasyMockSupport() {
 
     private val helper = VcsUnitTestHelper()
 
