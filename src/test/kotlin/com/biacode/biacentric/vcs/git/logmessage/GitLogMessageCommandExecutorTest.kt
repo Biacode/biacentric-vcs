@@ -55,8 +55,7 @@ class GitLogMessageCommandExecutorTest : AbstractVcsUnitTest() {
         assertThat(GitLogMessageCommandExecutor.execute(
                 """|{"authorName: "%an""}""".trimMargin(),
                 "--max-count=1"
-        )
-        ).isNotNull().isNotBlank()
+        )).isNotNull().isNotBlank()
         verifyAll()
     }
     //endregion

@@ -1,5 +1,6 @@
 package com.biacode.biacentric.vcs.git.logmessage
 
+import com.biacode.biacentric.vcs.commons.git.Format
 import com.biacode.biacentric.vcs.test.AbstractVcsUnitTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
@@ -36,6 +37,17 @@ class GitLogMessageJsonFormatBuilderTest : AbstractVcsUnitTest() {
                                 GitLogMessagePlaceholder.AUTHOR_DATE)
                         ))
         ).isNotNull().isInstanceOf(GitLogMessageJsonFormatBuilder::class.java)
+        verifyAll()
+    }
+
+    @Test
+    fun `test default build method (without custom template)`() {
+        // test data
+        resetAll()
+        // expectations
+        replayAll()
+        // test scenario
+        assertThat(GitLogMessageJsonFormatBuilder().build()).isEqualTo(Format.gitLogMessageDefaultFormat)
         verifyAll()
     }
 
