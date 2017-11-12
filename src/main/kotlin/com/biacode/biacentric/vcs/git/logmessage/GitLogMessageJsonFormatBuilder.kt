@@ -32,7 +32,7 @@ class GitLogMessageJsonFormatBuilder {
         template.placeholders.forEach {
             jsonFormatBuilder.append("""|"${it.propertyName}": "${it.placeholder}", """.trimMargin())
         }
-        return StringBuilder(jsonFormatBuilder.dropLast(2)).append("},").toString()
+        return StringBuilder(jsonFormatBuilder.dropLast(2)).append("}").toString()
     }
     //endregion
 }

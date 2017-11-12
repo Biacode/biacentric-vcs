@@ -53,7 +53,7 @@ class GitLogMessageCommandExecutorTest : AbstractVcsUnitTest() {
         replayAll()
         // test scenario
         assertThat(GitLogMessageCommandExecutor.execute(
-                """|{"authorName: "%an""},""".trimMargin(),
+                """|{"authorName: "%an""}""".trimMargin(),
                 "--max-count=1"
         )
         ).isNotNull().isNotBlank()

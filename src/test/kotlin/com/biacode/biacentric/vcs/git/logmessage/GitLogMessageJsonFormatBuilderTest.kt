@@ -54,7 +54,7 @@ class GitLogMessageJsonFormatBuilderTest : AbstractVcsUnitTest() {
                         ))
                 )
                 .build()
-        ).isEqualTo("""|{"commitHash": "%H", "authorEmail": "%ae"},""".trimMargin())
+        ).isEqualTo("""|{"commitHash": "%H", "authorEmail": "%ae"}""".trimMargin())
         verifyAll()
     }
     //endregion
