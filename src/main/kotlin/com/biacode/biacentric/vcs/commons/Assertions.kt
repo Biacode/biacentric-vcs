@@ -6,6 +6,8 @@ package com.biacode.biacentric.vcs.commons
  * Time: 4:29 PM
  */
 object Assertions {
+
+    //region Public methods
     fun assertTrue(expression: Boolean, message: String = "This expression should be true") {
         if (!expression) throwException(message)
     }
@@ -17,4 +19,5 @@ object Assertions {
     private fun throwException(message: String) {
         throw IllegalArgumentException(message)
     }
+    //endregion
 }
