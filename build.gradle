@@ -24,6 +24,7 @@ version '0.0.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
+apply plugin: 'maven'
 
 dependencyManagement {
     imports {
