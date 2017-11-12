@@ -1,6 +1,5 @@
 package com.biacode.biacentric.vcs.git.logmessage;
 
-import com.biacode.biacentric.vcs.commons.git.Format;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,8 +21,8 @@ public class GitLogMessageCommandExecutorJavaTest {
 
     @Test
     public void testExecuteDefaultFormat() {
-        // {"authorName": "%an", "authorDate": "%ad", "subject": "%s"}
-        final String output = GitLogMessageCommandExecutor.INSTANCE.execute(Format.INSTANCE.getGitLogMessageDefaultFormat());
+        // {"commitHash": "%H", "authorName": "%an", "authorDate": "%ad", "subject": "%s"}
+        final String output = GitLogMessageCommandExecutor.INSTANCE.execute();
         assertThat(output).isNotNull().isNotBlank();
         LOGGER.info("Output - {}", output);
     }

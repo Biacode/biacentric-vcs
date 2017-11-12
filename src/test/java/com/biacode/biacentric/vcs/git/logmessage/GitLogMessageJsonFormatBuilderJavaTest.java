@@ -5,7 +5,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Collections;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,18 +23,19 @@ public class GitLogMessageJsonFormatBuilderJavaTest {
     @Test
     public void testDefaultBuilder() {
         final String format = new GitLogMessageJsonFormatBuilder().build();
-        assertThat(format).isNotNull().isNotBlank().isEqualTo(Format.INSTANCE.getGitLogMessageDefaultFormat());
         // default format is {"commitHash": "%H", "authorName": "%an", "authorDate": "%ad", "subject": "%s"}
+        assertThat(format).isNotNull().isNotBlank().isEqualTo(Format.INSTANCE.getGitLogMessageDefaultFormat());
         LOGGER.info("Format - {}", format);
     }
 
     @Test
     public void testCustomBuilder() {
+        final Set<GitLogMessagePlaceholder> placeholders = new HashSet<>(Arrays.asList(GitLogMessagePlaceholder.SUBJECT, GitLogMessagePlaceholder.AUTHOR_NAME));
         final String format = new GitLogMessageJsonFormatBuilder()
-                .fromTemplate(new GitLogMessageTemplate(Collections.singleton(GitLogMessagePlaceholder.SUBJECT)))
+                .fromTemplate(new GitLogMessageTemplate(placeholders))
                 .build();
-        assertThat(format).isNotNull().isNotBlank().isEqualTo("{\"subject\": \"%s\"}");
-        // custom format is {"subject": "%s"}
+        assertThat(format).isNotNull().isNotBlank().isEqualTo("{\"authorName\": \"%an\", \"subject\": \"%s\"}");
+        // custom format is {"authorName": "%an", "subject": "%s"}
         LOGGER.info("Format - {}", format);
     }
 }

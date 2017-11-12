@@ -12,6 +12,15 @@ object GitLogMessageCommandExecutor {
 
     //region Public methods
     /**
+     * Executes git log command with default format and commands.
+     *
+     * @return the command execution output string.
+     */
+    fun execute(): String {
+        return processExecution(Format.gitLogMessageDefaultFormat, *arrayOf())
+    }
+
+    /**
      * Executes git log command.
      *
      * @param format The git log message json format.
