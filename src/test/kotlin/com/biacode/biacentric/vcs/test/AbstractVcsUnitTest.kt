@@ -13,6 +13,6 @@ import org.junit.runner.RunWith
 @RunWith(EasyMockRunner::class)
 abstract class AbstractVcsUnitTest : EasyMockSupport() {
 
-    private val helper = VcsUnitTestHelper()
+    protected val helper = VcsUnitTestHelper()
 
 }
