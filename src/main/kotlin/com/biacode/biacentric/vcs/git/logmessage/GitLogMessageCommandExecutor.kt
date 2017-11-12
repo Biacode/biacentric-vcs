@@ -1,6 +1,6 @@
 package com.biacode.biacentric.vcs.git.logmessage
 
-import com.biacode.biacentric.vcs.commons.git.Format
+import com.biacode.biacentric.vcs.commons.format.GitFormats
 import org.zeroturnaround.exec.ProcessExecutor
 
 /**
@@ -17,7 +17,7 @@ object GitLogMessageCommandExecutor {
      * @return the command execution output string.
      */
     fun execute(): String {
-        return processExecution(Format.gitLogMessageDefaultFormat, *arrayOf())
+        return processExecution(GitFormats.gitLogMessageDefaultFormat)
     }
 
     /**
@@ -27,13 +27,13 @@ object GitLogMessageCommandExecutor {
      * @param commands The git log specific commands like HEAD, --log-size etc...
      * @return the command execution output string.
      */
-    fun execute(format: String = Format.gitLogMessageDefaultFormat, vararg commands: String = arrayOf()): String {
+    fun execute(format: String = GitFormats.gitLogMessageDefaultFormat, vararg commands: String = arrayOf()): String {
         return processExecution(format, *commands)
     }
     //endregion
 
     //region Utility methods
-    private fun processExecution(format: String, vararg commands: String = arrayOf()): String {
+    private fun processExecution(format: String, vararg commands: String): String {
         val output = ProcessExecutor()
                 .command("git", "log", *commands, "--format=format:$format,")
                 .readOutput(true).execute()

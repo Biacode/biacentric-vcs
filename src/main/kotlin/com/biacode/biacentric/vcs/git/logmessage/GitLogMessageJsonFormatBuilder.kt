@@ -1,6 +1,6 @@
 package com.biacode.biacentric.vcs.git.logmessage
 
-import com.biacode.biacentric.vcs.commons.Assertions
+import com.biacode.biacentric.vcs.commons.assertions.Assertions
 
 /**
  * Created by Arthur Asatryan.

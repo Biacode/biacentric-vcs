@@ -1,4 +1,4 @@
-package com.biacode.biacentric.vcs.commons
+package com.biacode.biacentric.vcs.commons.assertions
 
 /**
  * Created by Arthur Asatryan.

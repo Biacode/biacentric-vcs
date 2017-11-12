@@ -1,6 +1,6 @@
 package com.biacode.biacentric.vcs.git.logmessage
 
-import com.biacode.biacentric.vcs.commons.git.Format
+import com.biacode.biacentric.vcs.commons.format.GitFormats
 import com.biacode.biacentric.vcs.test.AbstractVcsUnitTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
@@ -10,7 +10,7 @@ import org.junit.Test
  * Date: 11/11/17
  * Time: 7:15 PM
  */
-class GitLogMessageJsonFormatBuilderTest : AbstractVcsUnitTest() {
+class GitLogMessageJsonGitFormatsBuilderTest : AbstractVcsUnitTest() {
 
     //region Test methods
     @Test
@@ -47,7 +47,7 @@ class GitLogMessageJsonFormatBuilderTest : AbstractVcsUnitTest() {
         // expectations
         replayAll()
         // test scenario
-        assertThat(GitLogMessageJsonFormatBuilder().build()).isEqualTo(Format.gitLogMessageDefaultFormat)
+        assertThat(GitLogMessageJsonFormatBuilder().build()).isEqualTo(GitFormats.gitLogMessageDefaultFormat)
         verifyAll()
     }
 

@@ -1,6 +1,6 @@
 package com.biacode.biacentric.vcs.git.logmessage;
 
-import com.biacode.biacentric.vcs.commons.git.Format;
+import com.biacode.biacentric.vcs.commons.format.GitFormats;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,15 +16,15 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Date: 11/12/17
  * Time: 2:49 PM
  */
-public class GitLogMessageJsonFormatBuilderJavaTest {
+public class GitLogMessageJsonGitFormatsBuilderJavaTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(GitLogMessageJsonFormatBuilderJavaTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GitLogMessageJsonGitFormatsBuilderJavaTest.class);
 
     @Test
     public void testDefaultBuilder() {
         final String format = new GitLogMessageJsonFormatBuilder().build();
         // default format is {"commitHash": "%H", "authorName": "%an", "authorDate": "%ad", "subject": "%s"}
-        assertThat(format).isNotNull().isNotBlank().isEqualTo(Format.INSTANCE.getGitLogMessageDefaultFormat());
+        assertThat(format).isNotNull().isNotBlank().isEqualTo(GitFormats.INSTANCE.getGitLogMessageDefaultFormat());
         LOGGER.info("Format - {}", format);
     }
 

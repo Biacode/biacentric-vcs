@@ -1,4 +1,4 @@
-package com.biacode.biacentric.vcs.commons
+package com.biacode.biacentric.vcs.commons.assertions
 
 import com.biacode.biacentric.vcs.test.AbstractVcsUnitTest
 import org.junit.Assert.fail
