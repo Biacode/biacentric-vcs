@@ -32,7 +32,7 @@ class GitLogMessageJsonFormatBuilderTest : AbstractVcsUnitTest() {
         // test scenario
         assertThat(
                 GitLogMessageJsonFormatBuilder().fromTemplate(
-                        GitLogMessageTemplate(setOf(
+                        GitLogMessageTemplate(listOf(
                                 GitLogMessagePlaceholder.ABBREVIATED_COMMIT_HASH,
                                 GitLogMessagePlaceholder.AUTHOR_DATE)
                         ))
@@ -60,7 +60,7 @@ class GitLogMessageJsonFormatBuilderTest : AbstractVcsUnitTest() {
         // test scenario
         assertThat(GitLogMessageJsonFormatBuilder()
                 .fromTemplate(
-                        GitLogMessageTemplate(setOf(
+                        GitLogMessageTemplate(listOf(
                                 GitLogMessagePlaceholder.COMMIT_HASH,
                                 GitLogMessagePlaceholder.AUTHOR_EMAIL
                         ))

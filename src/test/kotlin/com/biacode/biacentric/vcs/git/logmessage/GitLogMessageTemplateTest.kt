@@ -45,7 +45,7 @@ class GitLogMessageTemplateTest : AbstractVcsUnitTest() {
         // expectations
         replayAll()
         // test scenario
-        assertThat(GitLogMessageTemplate(setOf(
+        assertThat(GitLogMessageTemplate(listOf(
                 GitLogMessagePlaceholder.AUTHOR_DATE_ISO
         )).placeholders).isNotNull.containsExactly(
                 GitLogMessagePlaceholder.AUTHOR_DATE_ISO

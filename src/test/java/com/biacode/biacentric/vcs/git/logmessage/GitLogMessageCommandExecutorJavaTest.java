@@ -4,9 +4,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -29,7 +29,7 @@ public class GitLogMessageCommandExecutorJavaTest {
 
     @Test
     public void testExecuteCustomFormatAndCommands() {
-        final Set<GitLogMessagePlaceholder> placeholders = new HashSet<>(Arrays.asList(
+        final List<GitLogMessagePlaceholder> placeholders = new ArrayList<>(Arrays.asList(
                 GitLogMessagePlaceholder.AUTHOR_DATE,
                 GitLogMessagePlaceholder.ABBREVIATED_TREE_HASH,
                 GitLogMessagePlaceholder.SUBJECT

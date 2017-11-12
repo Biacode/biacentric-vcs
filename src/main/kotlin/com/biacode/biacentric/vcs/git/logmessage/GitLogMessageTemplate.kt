@@ -6,7 +6,7 @@ package com.biacode.biacentric.vcs.git.logmessage
  * Time: 4:29 PM
  */
 data class GitLogMessageTemplate(
-        var placeholders: Set<GitLogMessagePlaceholder> = setOf(
+        var placeholders: List<GitLogMessagePlaceholder> = listOf(
                 GitLogMessagePlaceholder.COMMIT_HASH,
                 GitLogMessagePlaceholder.AUTHOR_NAME,
                 GitLogMessagePlaceholder.AUTHOR_DATE,

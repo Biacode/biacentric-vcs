@@ -5,9 +5,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -30,7 +30,7 @@ public class GitLogMessageJsonFormatBuilderJavaTest {
 
     @Test
     public void testCustomBuilder() {
-        final Set<GitLogMessagePlaceholder> placeholders = new HashSet<>(Arrays.asList(GitLogMessagePlaceholder.SUBJECT, GitLogMessagePlaceholder.AUTHOR_NAME));
+        final List<GitLogMessagePlaceholder> placeholders = new ArrayList<>(Arrays.asList(GitLogMessagePlaceholder.AUTHOR_NAME, GitLogMessagePlaceholder.SUBJECT));
         final String format = new GitLogMessageJsonFormatBuilder()
                 .fromTemplate(new GitLogMessageTemplate(placeholders))
                 .build();

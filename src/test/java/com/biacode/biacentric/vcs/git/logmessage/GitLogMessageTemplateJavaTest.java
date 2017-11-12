@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
-import java.util.Set;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -33,7 +33,7 @@ public class GitLogMessageTemplateJavaTest {
     @Test
     public void testCustomTemplate() {
         final GitLogMessageTemplate template = new GitLogMessageTemplate();
-        final Set<GitLogMessagePlaceholder> placeholders = Collections.singleton(GitLogMessagePlaceholder.SUBJECT);
+        final List<GitLogMessagePlaceholder> placeholders = Collections.singletonList(GitLogMessagePlaceholder.SUBJECT);
         template.setPlaceholders(placeholders);
         assertThat(template.getPlaceholders()).isNotNull().isNotEmpty().containsExactly(
                 GitLogMessagePlaceholder.SUBJECT
